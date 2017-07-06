@@ -1,6 +1,6 @@
 const { pathExists, readJson } = require('fs-extra')
 const { resolve } = require('path')
-const problems = require('./problems')
+const reporters = require('./reporters')
 
 class Fublish {
   constructor ({ cwd }) {
@@ -12,7 +12,7 @@ class Fublish {
 
     const exists = await pathExists(pkgPath)
     if (!exists) {
-      problems.critical({
+      reporters.critical({
         message: 'package.json does not exist',
         details: pkgPath
       })
@@ -22,7 +22,7 @@ class Fublish {
       const pkg = await readJson(pkgPath)
       return pkg
     } catch (error) {
-      problems.critical({
+      reporters.critical({
         message: 'package.json can not be parsed',
         details: pkgPath
       })
@@ -31,6 +31,10 @@ class Fublish {
 
   async readPlugins () {
     console.log('will read plugins')
+  }
+
+  async runPlugins () {
+    console.log('will run plugins')
   }
 
   async start () {

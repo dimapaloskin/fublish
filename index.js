@@ -1,7 +1,9 @@
 const Fublish = require('./src')
-const problems = require('./src/problems')
+const reporters = require('./src/reporters')
+const { levels } = require('./src/constants')
 
 module.exports = {
   Fublish,
-  problems
+  reporters,
+  levels
 }
