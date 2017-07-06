@@ -1,0 +1,8 @@
+{
+  "name": "fixture-project",
+  "version": "0.0.1",
+  "description": "Fixture",
+  "main": "index.js",
+  "author": "Dima Pavlovsky",
+  "license": "MIT"
+}
